@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Custom Circle</title>
+	<style>
+		canvas{
+			border: 1px dashed #b784a7;
+			margin: 5% 0 0 10%;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="myCanvas" width="500" height="500">
+		<p>Your browser doesn't support the latest HTML canvas element.</p>
+	</canvas>
+	
+	<script>
+
+	function draw(canvas, context){
+		var radius = prompt("Enter an radius...");
+		var rad = parseInt(radius, 10);
+		var color = prompt("Enter a color...");
+
+		context.beginPath();
+		if(color == "red" || color == "Red" || color == "RED"){
+			context.fillStyle = "#FF0000";
+		}
+		else if(color == "green" || color == "Green" || color == "GREEN"){
+			context.fillStyle = "#00FF00";
+		}
+		else if(color == "blue" || color == "Blue" || color == "GREEN"){
+			context.fillStyle = "#0000FF";
+		}
+		else{
+			alert("Please enter red, green or blue.");
+		}
+
+		context.arc(250, 250, rad, 0, 2*Math.PI, true);
+		context.fill();
+		context.closePath;
+	}
+
+		window.onload = function init(){
+			// initialize the canvas function
+			var canvas = document.getElementById('myCanvas');
+			var context = myCanvas.getContext("2d");
+
+			// call the functions
+			draw(canvas, context);
+		}
+	</script>
+</body>
+</html>
