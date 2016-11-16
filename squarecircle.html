@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>SquareCircle</title>
+	<script>
+		window.onload = function(){
+			// initialize the canvas function
+			var canvas = document.getElementById('myCanvas');
+			var context = myCanvas.getContext("2d");
+
+			// call the square function and pass the methods.
+			square(canvas, context);
+			circle(canvas, context);
+		}
+
+		function square(canvas, context){
+			context.fillStyle = "#4DA1FF";
+			context.fillRect(175, 225, 150, 150);
+		}
+
+		function circle(canvas, context){
+			context.beginPath();
+
+			context.fillStyle = "#A193FF";
+			// context.strokeStyle = "#A193FF";
+			// context.arc(x,y,r,sAngle,eAngle,counterclockwise);
+			context.arc(250, 150, 75, 0, 2*Math.PI, true);
+			context.fill();
+			// context.stroke();
+			context.closePath;
+
+		}
+	</script>
+	<style>
+		canvas{
+			border: 1px dashed #b784a7;
+			margin: 5% 0 0 10%;
+		}
+	</style>
+</head>
+<body>
+<canvas id="myCanvas" width="500" height="500">
+	
+</canvas>
+	
+</body>
+</html>
