@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Five</title>
+	<style>
+		canvas{
+			border: 1px dashed #b784a7;
+			margin: 5% 0 0 10%;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="myCanvas" width="500" height="500">
+		<p>Your browser doesn't support the latest HTML canvas element.</p>
+	</canvas>
+	
+	<script>
+
+	function square(canvas, context){
+		for (var i = 1; i <= 5; i++) {
+			context.fillStyle = "#000000";
+			context.fillRect(i*75, 75, 50, 50);
+		}
+		
+	}
+
+		window.onload = function init(){
+			// initialize the canvas function
+			var canvas = document.getElementById('myCanvas');
+			var context = myCanvas.getContext("2d");
+
+			// call the functions
+			square(canvas, context);
+		}
+	</script>
+</body>
+</html>
