@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Alternating</title>
+	<style>
+		canvas{
+			border: 1px dashed #b784a7;
+			margin: 5% 0 0 10%;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="myCanvas" width="500" height="500">
+		<p>Your browser doesn't support the latest HTML canvas element.</p>
+	</canvas>
+	
+	<script>
+
+	function draw(canvas, context){
+		var input = prompt("How many shapes do you want to draw?");
+		var s = parseInt(input, 10);
+
+		for (var i = 1; i <= s; i++) {
+			if(i%2==0){
+				context.beginPath();
+				context.fillStyle = "#f49842";
+				context.arc(i*50, 110, 10, 0, 2*Math.PI, true);
+				context.fill();
+				context.closePath;
+			}
+			else{
+				context.fillStyle = "#f4427a";
+				context.fillRect(i*45, 100, 20, 20);
+			}
+		}
+		
+	}
+
+		window.onload = function init(){
+			// initialize the canvas function
+			var canvas = document.getElementById('myCanvas');
+			var context = myCanvas.getContext("2d");
+
+			// call the functions
+			draw(canvas, context);
+		}
+	</script>
+</body>
+</html>
